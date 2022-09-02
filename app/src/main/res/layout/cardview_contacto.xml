@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvContacto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    app:cardCornerRadius="@dimen/corner_radius_cardview">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="7dp">
+
+        <ImageView
+            android:id="@+id/imgFotoContacto"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_gravity="center_horizontal"
+            ></ImageView>
+
+        <TextView
+            android:id="@+id/txtViewNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/telefono_contacto"
+            android:textStyle="bold"
+            >
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/txtViewTelefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="">
+
+        </TextView>
+        <ImageButton
+            android:id="@+id/imgBtnLike"
+            android:layout_width="@dimen/size_img_button"
+            android:layout_height="@dimen/size_img_button"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_bone_fav">
+        </ImageButton>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

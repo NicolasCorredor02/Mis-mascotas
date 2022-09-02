@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/actionBar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/design_default_color_primary"
+    android:elevation="@dimen/elevacion_actionbar"
+    >
+    <ImageView
+        android:id="@+id/icActionbarDog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_actionbar_dog">
+
+    </ImageView>
+    <TextView
+        android:paddingLeft="@dimen/pading_left_titulo_actionbar"
+        android:id="@+id/txtActionbarTitulo"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="@dimen/telefono_contacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtActionbarTitulo">
+    </TextView>
+    <ImageButton
+        android:id="@+id/imgBtnMoveLike"
+        android:paddingLeft="@dimen/pading_left_btnaction_fav_pets"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary"
+        android:src="@drawable/ic_actionbar_move_fav_pets">
+
+    </ImageButton>
+
+</Toolbar>

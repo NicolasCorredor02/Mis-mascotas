@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mis contactos</string>
+    <string name="nombre">Nicolas</string>
+    <string name="telefono">3176825566</string>
+    <string name="email">nicolas.d02@outlook.com</string>
+    <string name="pEnviarNombre">nombre</string>
+    <string name="pEnviarTelefono">telefono</string>
+    <string name="pEnviarEmail">email</string>
+    <string name="txtActionbarTitulo">Mascotas</string>
+
+</resources>
