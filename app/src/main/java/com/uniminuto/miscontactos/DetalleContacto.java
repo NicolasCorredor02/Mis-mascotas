@@ -6,18 +6,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.uniminuto.miscontactos.adapter.ContactoAdaptadorFav;
+import com.uniminuto.miscontactos.pojo.Contacto;
 
 import java.util.ArrayList;
 
 public class DetalleContacto extends AppCompatActivity {
+
     //Creacion de un ArrayList que contendra a los contactos
     ArrayList<Contacto> contactosFav;
     private RecyclerView listaContactosFav;
@@ -57,6 +57,27 @@ public class DetalleContacto extends AppCompatActivity {
         txtNombre.setText(nombre);
         txtTelefono.setText(telefono);
         txtEmail.setText(email);*/
+    }
+    @Override
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_opciones,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.mAcerca:
+                Intent intent= new Intent(DetalleContacto.this,AcercaMenu.class);
+                startActivity(intent);
+                break;
+            case R.id.mContacto:
+                Intent i = new Intent(DetalleContacto.this,ContactoMenu.class);
+                startActivity(i);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     //BackArrow

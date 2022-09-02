@@ -7,5 +7,11 @@
     <string name="pEnviarTelefono">telefono</string>
     <string name="pEnviarEmail">email</string>
     <string name="txtActionbarTitulo">Mascotas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txtPerfilNombrePerro">Albus</string>
+    <string name="txtPerfilRazaPerro">Pastor Aleman</string>
+    <string name="mAbout">Acerca de</string>
+    <string name="mContacto">Contacto</string>
 
 </resources>

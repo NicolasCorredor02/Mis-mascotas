@@ -1,4 +1,4 @@
-package com.uniminuto.miscontactos;
+package com.uniminuto.miscontactos.adapter;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,13 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.RecyclerView.ViewHolder;
+
+import com.uniminuto.miscontactos.pojo.Contacto;
+import com.uniminuto.miscontactos.DetalleContacto;
+import com.uniminuto.miscontactos.R;
 
 import java.util.ArrayList;
 
@@ -47,7 +49,7 @@ public class ContactoAdaptador extends RecyclerView.Adapter<ContactoAdaptador.Co
             @Override
             public void onClick(View v) {
                 Toast.makeText(activity, contacto.getNombre(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(activity,DetalleContacto.class);
+                Intent intent = new Intent(activity, DetalleContacto.class);
                 intent.putExtra("nombre",contacto.getNombre());
                 intent.putExtra("telefono",contacto.getTelefono());
                 intent.putExtra("email",contacto.getEmail());

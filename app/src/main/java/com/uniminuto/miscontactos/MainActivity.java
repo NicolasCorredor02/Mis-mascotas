@@ -1,58 +1,61 @@
 package com.uniminuto.miscontactos;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Toolbar;
+
+import com.google.android.material.tabs.TabLayout;
+import com.uniminuto.miscontactos.adapter.ContactoAdaptador;
+import com.uniminuto.miscontactos.adapter.PageAdapter;
+import com.uniminuto.miscontactos.fragment.PerfilFragment;
+import com.uniminuto.miscontactos.fragment.RecyclerViewFragment;
+import com.uniminuto.miscontactos.pojo.Contacto;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-    //Creacion de un ArrayList que contendra a los contactos
-    ArrayList<Contacto> contactos;
-    private RecyclerView listaContactos;
-
     ImageButton btnFav;
+    private Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Declaracion del actionbar
-        Toolbar miActionBar = (Toolbar)findViewById(R.id.actionBar);
-        /*setSupportActionBar(miActionBar);*/
-
-        listaContactos = (RecyclerView) findViewById(R.id.rvContactos);
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        /*GridLayoutManager glm = new GridLayoutManager(this,2);*/
-        listaContactos.setLayoutManager(llm);
-        inicializarListaContactos();
-        inicializarAdaptador();
-
+        toolbar =(Toolbar)findViewById(R.id.actionBar);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        viewPager = (ViewPager)findViewById(R.id.viewPager);
+        setUpViewPager();
         btnFav = (ImageButton) findViewById(R.id.imgBtnMoveLike);
         btnFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,DetalleContacto.class);
+                Intent intent = new Intent(MainActivity.this, DetalleContacto.class);
                 startActivity(intent);
             }
         });
 
+
+        //Declaracion del actionbar
+        //Toolbar miActionBar = (Toolbar)findViewById(R.id.actionBar);
+        /*setSupportActionBar(miActionBar);*/
+
+        //Validacin para el toolbar
+        /*if(toolbar!=null){
+            setSupportActionBar(toolbar);
+        }*/
 
         //Ya que el arreglo contactos posee objetos, es necesario implementar un ciclo for each para la 
         // muestra de uno de los atributos de esos objetos, en este caso sera solo la muestra de nombres
@@ -82,20 +85,42 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    //Metodo para inicializar el Adaptador
-    public void inicializarAdaptador(){
-        ContactoAdaptador adaptador = new ContactoAdaptador(contactos,this);
-        listaContactos.setAdapter(adaptador);
 
+
+
+    private ArrayList<Fragment>agregarFragments(){
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new PerfilFragment());
+        return fragments;
     }
-    //Metodo para llenar el Array de contactos en el recyclerCardView
-    public void inicializarListaContactos(){
-        contactos = new ArrayList<Contacto>();
-        contactos.add(new Contacto("Rufus","Pastor Aleman","nicolas.d02@outlook.com",R.drawable.perro1,false));
-        contactos.add(new Contacto("Max","Golden Retriever","pipe@gmail.com",R.drawable.perro2,true));
-        contactos.add(new Contacto("Penny","Chihuahua","marcela@gmail.com",R.drawable.perro3,true));
-        contactos.add(new Contacto("George","Border Colie","jose@gmail.com",R.drawable.perro4,false));
-        contactos.add(new Contacto("Esmeralda","Pit Bull","nubia@gmail.com",R.drawable.perro5,true));
-        contactos.add(new Contacto("Juan","Labrador","juan@gamil.com",R.drawable.perro6,true));
+    //Este metodo pone en orbita los fragments para ser visualizados e instanciados
+    private void setUpViewPager(){
+        viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(),agregarFragments()));
+        tabLayout.setupWithViewPager(viewPager);
+
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_home);
+        tabLayout.getTabAt(1).setIcon(R.drawable.ic_profile);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_opciones,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.mAcerca:
+                Intent intent= new Intent(MainActivity.this,AcercaMenu.class);
+                startActivity(intent);
+                break;
+            case R.id.mContacto:
+                Intent i = new Intent(MainActivity.this,ContactoMenu.class);
+                startActivity(i);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

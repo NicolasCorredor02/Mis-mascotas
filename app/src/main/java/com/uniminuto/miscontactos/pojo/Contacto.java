@@ -1,4 +1,4 @@
-package com.uniminuto.miscontactos;
+package com.uniminuto.miscontactos.pojo;
 
 public class Contacto {
     private String nombre;

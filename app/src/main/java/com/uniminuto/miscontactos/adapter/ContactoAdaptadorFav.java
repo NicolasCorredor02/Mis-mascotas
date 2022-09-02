@@ -1,4 +1,4 @@
-package com.uniminuto.miscontactos;
+package com.uniminuto.miscontactos.adapter;
 
 import android.app.Activity;
 import android.view.LayoutInflater;
@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.uniminuto.miscontactos.pojo.Contacto;
+import com.uniminuto.miscontactos.R;
 
 import java.util.ArrayList;
 

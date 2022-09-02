@@ -11,5 +11,6 @@
     <dimen name="elevacion_actionbar">4dp</dimen>
     <dimen name="pading_left_titulo_actionbar">120dp</dimen>
     <dimen name="pading_left_btnaction_fav_pets">60dp</dimen>
+    <dimen name="pading_vertical_rvProfilePet">300dp</dimen>
     
 </resources>

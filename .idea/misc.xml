@@ -4,9 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/action_bar.xml" value="0.37083333333333335" />
+        <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/activity_acerca_menu.xml" value="0.371875" />
+        <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/activity_contacto_menu.xml" value="0.371875" />
         <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/activity_detalle_contacto.xml" value="0.371875" />
         <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/activity_main.xml" value="0.371875" />
         <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/cardview_contacto.xml" value="0.36615384615384616" />
+        <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/cardview_mascota_profile.xml" value="0.37083333333333335" />
+        <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/fragment_perfil.xml" value="0.371875" />
+        <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/fragment_perfil2.xml" value="0.371875" />
+        <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/layout/fragment_recyclerview.xml" value="0.37083333333333335" />
+        <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/menu/activity_contacto_menu.xml" value="0.371875" />
+        <entry key="..\:/AndroidStudioProyects/Miscontactos/app/src/main/res/menu/menu_opciones.xml" value="0.36615384615384616" />
       </map>
     </option>
   </component>
